@@ -2,33 +2,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="clip_horizontal"
     tools:context="com.example.androidmap.MainActivity" >
 
-    <fragment
-        android:id="@+id/mapFragment"
-        android:name="com.google.android.gms.maps.MapFragment"
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnLocalAtual"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
+        android:layout_above="@+id/linearLayout1" >
 
-    <Button
-        android:id="@+id/btnRota"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/mapFragment"
-        android:layout_marginRight="14dp"
-        android:text="Rota executada" />
+        <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="404dp" />
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/btnLocalAtual"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="16dp"
-        android:layout_toLeftOf="@+id/btnRota"
-        android:text="Local atual" />
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/btnRota"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:text="Rota executada" />
+
+        <Button
+            android:id="@+id/btnLocalAtual"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Local atual" />
+    </LinearLayout>
 
 </RelativeLayout>
